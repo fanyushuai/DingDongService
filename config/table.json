@@ -1,0 +1,17 @@
+{
+	"user_info": {
+        "user_name": "String",
+        "age": "Number",
+        "sex": "String",
+        "PWD": "String",
+        "email":"String",
+        "create_time": "Date"
+    },
+    "news": {
+		"title": "String",
+        "content": "String",
+        "author_name":"String",
+        "cover":"String",
+        "create_time": "Date"
+    }
+}
