@@ -31,7 +31,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.post('/login', user.login);
 app.get('/reg', user.reg);
-app.get('/newList', hotNews.hotNewsList);
+app.get('/newsList', hotNews.hotNewsList);
 app.get('/getNews', hotNews.getNews);
 
 

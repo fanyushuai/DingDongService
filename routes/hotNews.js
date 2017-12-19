@@ -4,7 +4,9 @@ var MongoDB = require('../dbUtil');
 
 exports.hotNewsList = function(req, res){
 	console.log('新闻列表');
-	MongoDB.find('news', {},{}, function (err, hotNews) {
+	var pageIndex = req.query.pageIndex;
+	console.log(pageIndex);
+	MongoDB.find('news', {},{},pageIndex, function (err, hotNews) {
 		res.json(hotNews);
 	});
 };

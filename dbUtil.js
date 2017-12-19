@@ -7,6 +7,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var logger = require('pomelo-logger').getLogger('mongodb-log');
 
+
 var options = {
     db_user: "",
     db_pwd: "",
@@ -164,13 +165,18 @@ DB.prototype.remove = function (table_name, conditions, callback) {
  * @param fields 待返回字段
  * @param callback 回调方法
  */
-DB.prototype.find = function (table_name, conditions, fields, callback) {
+DB.prototype.find = function (table_name, conditions, fields,pageIndex,callback) {
     var node_model = this.getConnection(table_name);
-    node_model.find(conditions, fields || null, {}, function (err, res) {
+    var skipnum = (pageIndex - 1) * 10;
+    console.log(skipnum);
+    var pageSize = 10;
+    var sort = {title:1};
+    node_model.find(conditions, fields || null, {}).skip(skipnum).limit(pageSize).sort(sort).exec(function (err, res) {
         if (err) {
-            callback(err);
-        } else {
-            callback(null, res);
+        	callback(err);
+        }
+        else {
+        	callback(null, res);
         }
     });
 };
