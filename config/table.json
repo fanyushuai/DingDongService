@@ -13,5 +13,11 @@
         "author_name":"String",
         "cover":"String",
         "create_time": "Date"
+    },
+    "videos": {
+    	"title":"String",
+    	"pic":"String",
+    	"url":"String",
+    	"length":"String"
     }
 }

@@ -7,6 +7,7 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , hotNews = require('./routes/hotNews')
+  , videos = require('./routes/videos')
   , http = require('http')
   , path = require('path');
 
@@ -33,6 +34,8 @@ app.post('/login', user.login);
 app.get('/reg', user.reg);
 app.get('/newsList', hotNews.hotNewsList);
 app.get('/getNews', hotNews.getNews);
+app.get('/videosList', videos.videosList);
+app.get('/getVideo', videos.getVideo);
 
 
 http.createServer(app).listen(app.get('port'), function(){
