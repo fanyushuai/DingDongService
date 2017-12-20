@@ -8,6 +8,8 @@ var express = require('express')
   , user = require('./routes/user')
   , hotNews = require('./routes/hotNews')
   , videos = require('./routes/videos')
+  , menus = require('./routes/menus')
+   , blogs = require('./routes/blogs')
   , http = require('http')
   , path = require('path');
 
@@ -32,10 +34,17 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.post('/login', user.login);
 app.get('/reg', user.reg);
+
 app.get('/newsList', hotNews.hotNewsList);
 app.get('/getNews', hotNews.getNews);
+
 app.get('/videosList', videos.videosList);
 app.get('/getVideo', videos.getVideo);
+
+app.get('/menusList', menus.menusList);
+
+app.get('/getBlog', blogs.getBlog);
+app.get('/blogsList', blogs.blogsList);
 
 
 http.createServer(app).listen(app.get('port'), function(){

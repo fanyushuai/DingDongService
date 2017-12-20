@@ -14,10 +14,20 @@
         "cover":"String",
         "create_time": "Date"
     },
+    "blogs": {
+		"title": "String",
+        "content": "String",
+        "author_name":"String",
+        "create_time": "Date"
+    },
     "videos": {
     	"title":"String",
     	"pic":"String",
     	"url":"String",
     	"length":"String"
+    },
+    "menus": {
+    	"name":"String",
+    	"url" :"String"
     }
 }
