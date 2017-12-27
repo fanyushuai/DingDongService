@@ -169,7 +169,7 @@ DB.prototype.find = function (table_name, conditions, fields,pageIndex,callback)
     var node_model = this.getConnection(table_name);
     var skipnum = (pageIndex - 1) * 10;
     console.log(skipnum);
-    var pageSize = 10;
+    var pageSize = 20;
     var sort = {title:1};
     node_model.find(conditions, fields || null, {}).skip(skipnum).limit(pageSize).sort(sort).exec(function (err, res) {
         if (err) {
